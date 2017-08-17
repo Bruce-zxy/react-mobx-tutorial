@@ -5,4 +5,6 @@ import TodoList from './TodoList';
 import store from './TodoStore';
 
 
+console.log('Main Test');
+
 ReactDom.render(<TodoList store={store}/>, document.getElementById("app"));

@@ -13,10 +13,17 @@ export default class TodoList extends Component {
 		}
 	}
 	render() {
-		const { filter, filteredTodos, todos } = this.props.store;
-
+		const { filter, option, filteredTodos, todos } = this.props.store;
+		const newOption = Object.assign({}, option);
+		var i;
+		for (i in option) {
+			if (newOption.hasOwnProperty(i)) {
+				console.log(i);
+			}
+		}
+		// console.log(newOption.series);
 		const todoLis = filteredTodos.map(todo => (
-			<li>{todo}</li>
+			<li key={todo.id}>{todo.value}</li>
 		))
 		return <div>
 				<h1>todos</h1>
